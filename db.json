@@ -1,0 +1,54 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "marked_ids": [
+    {
+      "id": "3f861c4e0445130cf8ce3ba78ba001f75c9c4a0f"
+    },
+    {
+      "id": "207b63f0891d4d4934d68e2bd0931bf3cbb2bcbf"
+    },
+    {
+      "id": "06224b2319eb2cd2c28e9fae3252542a205de80e"
+    },
+    {
+      "id": "10988a2560647804ffc139b6f5358187b7158dfb"
+    },
+    {
+      "id": "09d99cd37409b660d9b4dc81411b783eca0fb520"
+    },
+    {
+      "id": "2dcd6bfacdfeb4052723c128ecb2a275c263ac23"
+    },
+    {
+      "id": "ba6e2d61b17e39b5100b39560a45839b8d753d12"
+    },
+    {
+      "id": "25579cb6a280f5ff7743a8a65ac781aec696a6a6"
+    },
+    {
+      "id": "0a48c6c4f2c0ac14fbb4c4864e14a92f6132707d"
+    },
+    {
+      "id": "8f523e0e05ced0b2c0e9ffd13da2b75207d461cc"
+    },
+    {
+      "id": "26c6131e345afa51993361d4b5eeb8e24a0a06ee"
+    }
+  ]
+}
