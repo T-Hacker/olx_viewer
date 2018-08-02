@@ -19,7 +19,11 @@ class App extends Component {
         Cell: row => (<img className="App-Article-img" src={row.value} alt="Article" />)
       },
       { Header: 'Title', accessor: 'title' },
-      { Header: 'Price', accessor: 'price', maxWidth: 100 }
+      { Header: 'Price', accessor: 'price', maxWidth: 100 },
+      {
+        Header: 'Link', accessor: 'link', maxWidth: 60,
+        Cell: row => (<button onClick={() => window.open(row.value, "_blank")}>Open</button>)
+      }
     ];
 
     this.state = {
