@@ -130,7 +130,13 @@ class App extends Component {
   };
 
   unmarkRead = () => {
-    console.log("unmarked");
+    this.state.selection.forEach(id => {
+      fetch('http://localhost:8080/marked_ids/' + id, {
+        "method": "DELETE"
+      })
+        .then((response) => this.listArticles())
+        .catch((reason) => console.error(reason));
+    });
   };
 
   render() {
