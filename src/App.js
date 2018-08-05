@@ -42,11 +42,12 @@ class App extends Component {
   listArticles(list_marked = true) {
     // Get all ids on the server.
     fetch("http://" + FEED_DATA_SERVER + "/marked_ids", {
-      "headers": {
-        "Accept": "application/json",
-        "Content-Type": "application/json"
-      },
-      "method": "GET"
+      method: "GET",
+      mode: "cors", // or without this line
+      redirect: 'follow',
+      headers: {
+        'content-type': 'application/json'
+      }
     }).then((response) => response.json())
       .then((marked_ids_obj) => {
         const marked_ids = marked_ids_obj.map(id_obj => id_obj['id']);
