@@ -9,6 +9,8 @@ import 'react-tabs/style/react-tabs.css';
 
 const CheckboxTable = checkboxHOC(ReactTable);
 
+const FEED_DATA_SERVER = "192.168.1.69:8080";
+
 class App extends Component {
   constructor() {
     super();
@@ -39,7 +41,7 @@ class App extends Component {
 
   listArticles(list_marked = true) {
     // Get all ids on the server.
-    fetch('http://localhost:8080/marked_ids', {
+    fetch("http://" + FEED_DATA_SERVER + "/marked_ids", {
       "headers": {
         "Accept": "application/json",
         "Content-Type": "application/json"
@@ -69,7 +71,8 @@ class App extends Component {
             this.setState({ unmarked_articles, marked_articles });
           })
           .catch(error => console.log(error));
-      });
+      })
+      .catch((response) => console.error("Fail to get feed data: " + response));
   }
 
   toggleSelection = (key, shift, row) => {
