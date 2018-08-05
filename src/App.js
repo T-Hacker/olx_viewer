@@ -119,7 +119,7 @@ class App extends Component {
     this.state.selection.forEach(id => {
       const body = JSON.stringify({ id });
 
-      fetch('http://localhost:8080/marked_ids', {
+      fetch("http://" + FEED_DATA_SERVER + "/marked_ids", {
         "body": body,
         "headers": {
           "Accept": "application/json",
@@ -135,7 +135,7 @@ class App extends Component {
 
   unmarkRead = () => {
     this.state.selection.forEach(id => {
-      fetch('http://localhost:8080/marked_ids/' + id, {
+      fetch("http://" + FEED_DATA_SERVER + "/marked_ids/" + id, {
         "method": "DELETE"
       })
         .then((response) => this.listArticles())
