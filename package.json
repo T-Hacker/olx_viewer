@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "json-server": "^0.14.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "react-scripts": "1.1.4",
     "react-table": "^6.8.6",
     "react-tabs": "^2.2.2"

@@ -1,0 +1,12 @@
+[Unit]
+Description=OLX Viewer
+
+[Service]
+User=pedro
+Group=pi
+WorkingDirectory=/home/pedro/projects/olx_viewer
+ExecStart=/home/pedro/projects/olx_viewer/start_olx_viewer.sh
+
+[Install]
+WantedBy=multi-user.target
+
