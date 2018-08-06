@@ -52,8 +52,18 @@ class App extends Component {
       .then((marked_ids_obj) => {
         const marked_ids = marked_ids_obj.map(id_obj => id_obj['id']);
 
-        fetch('./feed.json')
-          .then(response => response.json())
+        fetch('./olx_feed.jl')
+          .then(response => response.text())
+          .then(text => {
+            const lines = text.split('\n');
+
+            var json_str = '[';
+            lines.forEach(line => json_str += line + ',');
+            json_str = json_str.substr(0, json_str.length - 2);
+            json_str += ']';
+
+            return JSON.parse(json_str);
+          })
           .then(data => {
             const unmarked_articles = data
               .filter(item => {
