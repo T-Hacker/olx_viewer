@@ -39,6 +39,12 @@ class App extends Component {
     this.listArticles();
   }
 
+  removeDuplicates(myArr, prop) {
+    return myArr.filter((obj, pos, arr) => {
+      return arr.map(mapObj => mapObj[prop]).indexOf(obj[prop]) === pos;
+    });
+  }
+
   listArticles(list_marked = true) {
     // Get all ids on the server.
     fetch("http://" + FEED_DATA_SERVER + "/marked_ids", {
@@ -65,19 +71,19 @@ class App extends Component {
             return JSON.parse(json_str);
           })
           .then(data => {
-            const unmarked_articles = data
+            const unmarked_articles = this.removeDuplicates(data
               .filter(item => {
                 const id = item['_id'];
 
                 return !marked_ids.includes(id);
-              });
+              }), '_id');
 
-            const marked_articles = data
+            const marked_articles = this.removeDuplicates(data
               .filter(item => {
                 const id = item['_id'];
 
                 return marked_ids.includes(id);
-              });
+              }), '_id');
 
             this.setState({ unmarked_articles, marked_articles });
           })
